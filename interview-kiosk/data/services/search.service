@@ -1,0 +1,13 @@
+[Unit]
+Description=Library Search
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=techlit
+ExecStart=/usr/bin/env ruby /var/www/search/app.rb -p 3000
+
+[Install]
+WantedBy=multi-user.target

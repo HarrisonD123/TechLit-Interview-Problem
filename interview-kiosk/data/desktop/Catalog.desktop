@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Catalog
+Exec=/usr/bin/chromium-browser --app=http://localhost:3001
+Icon=xreader

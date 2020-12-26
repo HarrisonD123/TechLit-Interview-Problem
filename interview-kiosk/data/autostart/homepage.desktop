@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Library Welcome Page
+Exec=/usr/bin/chromium-browser --app=http://localhost
+Icon=cs-color
+X-GNOME-Autostart-Enabled=true

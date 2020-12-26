@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Homepage
+Exec=/usr/bin/chromium-browser --app=http://localhost
+Icon=cs-color
