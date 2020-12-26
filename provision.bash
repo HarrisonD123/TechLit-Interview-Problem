@@ -45,12 +45,20 @@ configure_catalog() {
     systemctl enable catalog.service
 }
 
+configure_search() {  #Either /var/www/search exists or make it. #copy search recursively (all contents) into the /var/www/search on the VM
+	([[ -d /var/www/search ]] || mkdir /var/www/search) && \
+	cp -R /vagrant/data/search/* /var/www/search &&\
+	systemctl start search.service && \
+	systemctl enable search.service #Tell systemd to create symlink and start search.service
+}
+
 main() {
   update_apt && \
     install_dependencies && \
     configure_desktop && \
     configure_nginx && \
     configure_catalog && \
+    configure_search && \
     echo 'successfully provisioned'
 }
 
