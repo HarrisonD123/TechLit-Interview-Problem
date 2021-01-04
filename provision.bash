@@ -40,6 +40,8 @@ configure_catalog() {
   ([[ -d /var/www/catalog ]] || mkdir /var/www/catalog) && \
     cp -R /vagrant/data/catalog/* /var/www/catalog && \
     su postgres -c 'createuser -S techlit && createdb techlit' && \
+    sudo chown techlit:techlit /var/www/catalog/setup.rb && \
+    sudo chmod +x /var/www/catalog/setup.rb && \
     su techlit -c /var/www/catalog/setup.rb && \
     systemctl start catalog.service && \
     systemctl enable catalog.service
